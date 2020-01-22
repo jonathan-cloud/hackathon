@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import 'react-bootstrap'
+import Sidecomp from './Sidecomp'
 
 
 
@@ -21,18 +22,18 @@ const Maps = () => {
       lat: 32.077983,
       lng: 34.788889,
       type: 'paper'
-    },{
+    }, {
       lat: 32.058095,
       lng: 34.781054,
-      type: 'paper' 
+      type: 'paper'
     }
 
 
   ]
-  
+
 
   return (
-
+  
     <GoogleMap
 
       defaultZoom={12}
@@ -44,21 +45,21 @@ const Maps = () => {
     >
 
       {locations.map(res => (
-        
+
         <Marker
-        icon={{
-          url: 'https://cdn2.vectorstock.com/i/1000x1000/58/41/man-throwing-trash-into-dust-bin-icon-isolated-vector-25035841.jpg',
-          scaledSize: new window.google.maps.Size(20, 20)
-        }}
+          icon={{
+            url: 'https://cdn2.vectorstock.com/i/1000x1000/58/41/man-throwing-trash-into-dust-bin-icon-isolated-vector-25035841.jpg',
+            scaledSize: new window.google.maps.Size(20, 20)
+          }}
           position={{
             lat: res.lat,
             lng: res.lng
           }}
 
-        onClick={() => {
-        setSelected(res)
-        
-        }}
+          onClick={() => {
+            setSelected(res)
+
+          }}
         />
       ))}
 
@@ -70,14 +71,15 @@ const Maps = () => {
           }}
           onCloseClick={() => {
             setSelected(null)
-           
+
           }}
         >
-        <div>{selected.type}</div>
+          <div>{selected.type}</div>
         </InfoWindow>
       }
+     
     </GoogleMap>
-
+    
   )
 
 }
