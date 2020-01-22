@@ -2,14 +2,22 @@ import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import 'react-bootstrap'
 
-const locations = [
-  {
-    lat:  32.058095,
-    lng: 34.781054
 
-  }]
 
 const Maps = () => {
+  const locations = [
+    {
+      lat: 32.1,
+      lng: 34.2,
+      type: 'paper'
+
+    }, {
+      lat: 32.3,
+      lng: 34.4,
+      type: 'paper'
+    }
+
+  ]
   const [selected, setSelected] = useState(false)
 
   return (
@@ -23,6 +31,9 @@ const Maps = () => {
 
       }}
     >
+
+      {locations.map()}
+
       <Marker
         icon={{
           url: 'https://cdn2.vectorstock.com/i/1000x1000/58/41/man-throwing-trash-into-dust-bin-icon-isolated-vector-25035841.jpg',
@@ -42,13 +53,15 @@ const Maps = () => {
         lat: 32.081427, lng: 34.768358
 
       }} />
+
+
       {selected &&
         <InfoWindow
           position={{
             lat: 32.058095,
             lng: 34.781054
           }}
-          onCloseClick={()=>{
+          onCloseClick={() => {
             setSelected(null)
           }}
         >
