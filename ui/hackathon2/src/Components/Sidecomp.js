@@ -3,7 +3,7 @@ import React from 'react'
 const Sidecomp = () => {
   return (
     
-    <div className="col-6">hi</div>
+    <div className="col-2">hi</div>
   )
 }
 

@@ -4,7 +4,7 @@ import { Navbar, Form, FormControl, Button } from 'react-bootstrap'
 const Nav = () => {
   
   return (
-    <div className="container-fluid">
+   
       <div className="row-fluid">
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="#home">WeAct</Navbar.Brand>
@@ -14,7 +14,7 @@ const Nav = () => {
           </Form> */}
         </Navbar>
       </div>
-    </div>
+
   )
 }
 
