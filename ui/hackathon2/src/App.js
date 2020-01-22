@@ -3,9 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import {WrappedMap} from './Components/Maps'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Nav from './Components/Nav';
 
 function App() {
   return (
+    <>
+    <Nav />
     <div className="App">
       <div className="container-fluid" style= {{
         width: '100vw',
@@ -18,6 +21,7 @@ function App() {
         />
     </div>
     </div>
+    </>
   );
 }
 
