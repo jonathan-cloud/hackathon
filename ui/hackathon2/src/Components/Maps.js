@@ -5,6 +5,7 @@ import 'react-bootstrap'
 
 
 const Maps = () => {
+  const [selected, setSelected] = useState(null)
   const locations = [
     {
       lat: 32.081533,
@@ -20,16 +21,21 @@ const Maps = () => {
       lat: 32.077983,
       lng: 34.788889,
       type: 'paper'
+    },{
+      lat: 32.058095,
+      lng: 34.781054,
+      type: 'paper' 
     }
 
+
   ]
-  const [selected, setSelected] = useState(false)
+  
 
   return (
 
     <GoogleMap
 
-      defaultZoom={14}
+      defaultZoom={12}
       defaultCenter={{
         lat: 32.073730,
         lng: 34.775744
@@ -40,46 +46,34 @@ const Maps = () => {
       {locations.map(res => (
         
         <Marker
+        icon={{
+          url: 'https://cdn2.vectorstock.com/i/1000x1000/58/41/man-throwing-trash-into-dust-bin-icon-isolated-vector-25035841.jpg',
+          scaledSize: new window.google.maps.Size(20, 20)
+        }}
           position={{
             lat: res.lat,
             lng: res.lng
           }}
 
+        onClick={() => {
+        setSelected(res)
+        
+        }}
         />
       ))}
-
-      <Marker
-        icon={{
-          url: 'https://cdn2.vectorstock.com/i/1000x1000/58/41/man-throwing-trash-into-dust-bin-icon-isolated-vector-25035841.jpg',
-          scaledSize: new window.google.maps.Size(20, 20)
-        }}
-        position={{
-          lat: 32.058095, lng: 34.781054
-
-        }}
-
-        onClick={() => {
-          setSelected(true)
-        }}
-      />
-
-      <Marker position={{
-        lat: 32.081427, lng: 34.768358
-
-      }} />
-
 
       {selected &&
         <InfoWindow
           position={{
-            lat: 32.058095,
-            lng: 34.781054
+            lat: selected.lat,
+            lng: selected.lng
           }}
           onCloseClick={() => {
             setSelected(null)
+           
           }}
         >
-          <div>hey</div>
+        <div>{selected.type}</div>
         </InfoWindow>
       }
     </GoogleMap>
