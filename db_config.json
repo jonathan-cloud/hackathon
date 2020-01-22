@@ -1,5 +1,8 @@
 {
-  "user": "root",
-  "host": "localhost",
-  "passwd": "root"
+  "user_conf": {
+    "user": "root",
+    "host": "localhost",
+    "passwd": "password"
+  },
+  "db_name" : "recycling"
 }
