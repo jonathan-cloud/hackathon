@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import 'react-bootstrap'
-import Sidecomp from './Sidecomp'
+import Sidecomp from './SideMenu/Sidecomp'
 
 
 

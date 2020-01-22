@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "./Components/Nav";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Main from "./Components/Main/Main";
-import Sidecomp from "./Components/Sidecomp";
+import Sidecomp from "./Components/SideMenu/Sidecomp";
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
               <Route exact path="/">
                 <Main />
               </Route>
+              
               <Route exact path="/map">
                 
                 
