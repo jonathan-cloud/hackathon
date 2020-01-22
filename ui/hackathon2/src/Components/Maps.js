@@ -7,13 +7,18 @@ import 'react-bootstrap'
 const Maps = () => {
   const locations = [
     {
-      lat: 32.1,
-      lng: 34.2,
+      lat: 32.081533,
+      lng: 34.786206,
       type: 'paper'
 
     }, {
-      lat: 32.3,
-      lng: 34.4,
+      lat: 32.074460,
+      lng: 34.777640,
+      type: 'paper'
+
+    }, {
+      lat: 32.077983,
+      lng: 34.788889,
       type: 'paper'
     }
 
@@ -32,7 +37,16 @@ const Maps = () => {
       }}
     >
 
-      {locations.map()}
+      {locations.map(res => (
+        
+        <Marker
+          position={{
+            lat: res.lat,
+            lng: res.lng
+          }}
+
+        />
+      ))}
 
       <Marker
         icon={{
