@@ -5,7 +5,7 @@ import { WrappedMap } from "./Components/Maps";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "./Components/Nav";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Main from "./Components/Main";
+import Main from "./Components/Main/Main";
 
 function App() {
   return (
