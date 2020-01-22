@@ -1,11 +1,11 @@
 import json
-from utils import db_connection
 
+from data.utils import db_connection
 
 db_config = json.load(open('../db_config.json', 'r'))
-dbname = 'hackthon_recycling'
+dbname = db_config['db_name']
 
-with db_connection(**db_config) as con:
+with db_connection(**db_config['user_conf']) as con:
     cur = con.cursor()
     cur.execute(f'CREATE DATABASE IF NOT EXISTS {dbname}')
     cur.execute(f'use {dbname}')
@@ -24,5 +24,13 @@ with db_connection(**db_config) as con:
                     type_id int,
                     
                     FOREIGN KEY (location_address) REFERENCES locations(address),
+                    FOREIGN KEY (type_id) REFERENCES types(id)
+    );''')
+    cur.execute(f'''CREATE TABLE IF NOT EXISTS history (
+                    id int AUTO_INCREMENT PRIMARY KEY, 
+                    lan float,
+                    lat float
+                    type_id int,
+                    
                     FOREIGN KEY (type_id) REFERENCES types(id)
     );''')
