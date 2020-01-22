@@ -1,3 +1,6 @@
+# db_config:
+db_config.json
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -126,13 +129,13 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+*.env
+*.venv
+*env/
+*venv/
+*ENV/
+*env.bak/
+*venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -153,4 +156,4 @@ dmypy.json
 .pyre/
 
 # pycharm
-idea*
+.idea*
