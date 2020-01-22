@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap'
-// import ui/hackathon2/node_modules/bootstrap/dist/css/bootstrap.min.css
+
 const Nav = () => {
   return (
     <div className="container-fluid">
