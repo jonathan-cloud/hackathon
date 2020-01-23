@@ -44,7 +44,7 @@ class Sidecomp extends React.Component {
           <button value="clothes" onClick={this.handleClick}> GLASS </button>
         </div>
       </div>
-      <div>{this.coords.latitude}</div>
+      
       </>
     )
   }
