@@ -5,6 +5,7 @@ import json
 
 
 def find_locations(prices, max_clusters, money):
+
     centers = {}
     costs = {}
     amounts = {}
@@ -51,7 +52,13 @@ def find_locations(prices, max_clusters, money):
     return clusters, centers
 
 
-def return_locations(clusters, centers):
+def return_locations():
+    prices = {1: 500, 2: 700, 3: 1000, 4: 100, 5: 800}
+    max_clusters = 20
+    money = 15000
+
+    clusters, centers = find_locations(prices, max_clusters, money)
+
     centers_list = []
     types_dict = {1: 'glass', 2: 'plastic', 3: 'carton', 4: 'clothes', 5: 'energy'}
     for types in range(1, 6):
@@ -61,14 +68,14 @@ def return_locations(clusters, centers):
                            'lng': curr_center_list[j][1],
                            'type': types_dict[types]}
             centers_list.append(center_dict)
+
+    with open('predict.json', 'w') as f:
+        json.dump(centers_list, f)
     locations_json = json.dumps(centers_list)
     return locations_json
 
 
 df = pd.read_csv('history.csv')
-prices = {1: 500, 2: 700, 3: 1000, 4: 100, 5: 800}
-max_clusters = 20
-money = 15000
-clusters, centers = find_locations(prices, max_clusters, money)
-locations_json = return_locations(clusters, centers)
+
+locations_json = return_locations()
 # print(locations_json)
