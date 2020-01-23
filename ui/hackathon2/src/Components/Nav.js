@@ -9,8 +9,11 @@ const Nav = () => {
   return (
 
     <div className="row-fluid">
-      <Navbar bg="light" variant="success">
-        <Navbar.Brand href="#home">GreenCiycle</Navbar.Brand>
+      <Navbar bg="light" variant="success"> 
+        <Navbar.Brand href="#home">
+          <img src="panda1.png" height="40px" 
+               style={{padding: '0px 22px'}}  />
+          GreenCycle</Navbar.Brand>
         <span onClick={() => setSearchActive(!searchActive)} className="search-icon">
           <i class="fa fa-search"></i>
         </span>

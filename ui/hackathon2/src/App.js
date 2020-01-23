@@ -6,6 +6,7 @@ import Nav from "./Components/Nav";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Main from "./Components/Main/Main";
 import Sidecomp, { LocationContext } from "./Components/SideMenu/Sidecomp";
+import Footer from './Components/Footer'
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Nav />
       <div className="container-fluid App">
         <div
-          className="row"
+          className="row sm-collapse"
           style={{
             width: "100%",
             height: "500px",
@@ -51,6 +52,7 @@ function App() {
           </Route> */}
             </Switch>
           </Router>
+         <Footer />
         </div>
       </div>
     </>

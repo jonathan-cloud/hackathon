@@ -33,12 +33,14 @@ class Sidecomp extends React.Component {
       <>
 
         <div className="sidebar justify-content-center col-2">
-
-          <div>
-          <button className="plastic-btn" value="plastic" onClick={this.handleClick}>  </button>
+          <div className="five-btn">
+            <button className="bottles-btn" value="clothes" onClick={this.handleClick} >  </button>
           </div>
           <div>
-          <button className="carton-btn" value="carton" onClick={this.handleClick}>  </button>
+            <button className="plastic-btn" value="plastic" onClick={this.handleClick}>  </button>
+          </div>
+          <div>
+            <button className="carton-btn" value="carton" onClick={this.handleClick}>  </button>
           </div>
           <div className="third-btn">
             <button className="solar-btn" value="energy" onClick={this.handleClick}>  </button>
@@ -49,6 +51,7 @@ class Sidecomp extends React.Component {
           <div className="five-btn">
             <button className="clothes-btn" value="clothes" onClick={this.handleClick} >  </button>
           </div>
+
         </div>
 
 
