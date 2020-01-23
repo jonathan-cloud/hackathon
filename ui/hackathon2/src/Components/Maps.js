@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState,Context, useEffect } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import 'react-bootstrap'
-import Sidecomp from './SideMenu/Sidecomp'
+
+
+
 
 
 
 const Maps = () => {
+  
+  
   const [selected, setSelected] = useState(null)
+  const [latitude, setLatitude] = useState()
+  const [longitude, setLongitutde] = useState()
   const locations = [
     {
       lat: 32.081533,
@@ -26,14 +32,28 @@ const Maps = () => {
       lat: 32.058095,
       lng: 34.781054,
       type: 'paper'
-    }
+    
+    },
 
 
   ]
 
+  useEffect (()=>{
+    navigator.geolocation.getCurrentPosition(geoSuccess)
+    
+  },[]) 
+
+  const geoSuccess = (position) => {
+    console.log(position.coords.latitude)
+    console.log(position.coords.longitude)
+    setLatitude(position.coords.latitude)
+    setLongitutde(position.coords.longitude)
+    
+  }
 
   return (
-  
+    <>
+    
     <GoogleMap
 
       defaultZoom={12}
@@ -43,7 +63,20 @@ const Maps = () => {
 
       }}
     >
+      <Marker
+        icon={{
+          url: 'https://camo.githubusercontent.com/4b5a493a8346e986854a13cb65c74f499ae0ec52/687474703a2f2f7777772e323730746f77696e2e636f6d2f656c65637465642d6f6666696369616c732f696d67732f67656f6c6f636174652e706e67',
+          scaledSize: new window.google.maps.Size(20, 20)
+        }}
+        position={{
+          lat: latitude,
+          lng: longitude
+        }}
+        
+      >
 
+      </Marker>
+      
       {locations.map(res => (
 
         <Marker
@@ -77,9 +110,10 @@ const Maps = () => {
           <div>{selected.type}</div>
         </InfoWindow>
       }
-     
-    </GoogleMap>
     
+    </GoogleMap>
+      
+    </>
   )
 
 }

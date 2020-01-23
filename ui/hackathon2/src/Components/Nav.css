@@ -1,0 +1,18 @@
+.search-input {
+  max-width: 0px;
+  transition: all .5s;
+}
+.search-input.active {
+  max-width: 200px;
+}
+
+.search-icon {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.search-icon:hover {
+  background: pink;
+}
