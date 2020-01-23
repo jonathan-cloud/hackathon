@@ -1,9 +1,15 @@
 import json
+import pandas as pd
+import numpy as np
+
 from data.utils import db_connection
 
 
+CONF_PATH = '../db_config.json'
+
+
 def create_db():
-    db_config = json.load(open('../db_config.json', 'r'))
+    db_config = json.load(open(CONF_PATH, 'r'))
     dbname = db_config['db_name']
 
     with db_connection(**db_config['user_conf']) as con:
@@ -39,14 +45,9 @@ def create_db():
 
 
 def insert(file):
-    import pandas as pd
-    import numpy as np
-
     xl = pd.ExcelFile(file)
     df1 = xl.parse('data')
-
-
-    db_config = json.load(open('../db_config.json', 'r'))
+    db_config = json.load(open(CONF_PATH, 'r'))
     dbname = db_config['db_name']
     street = set(df1.address)
     types = set(df1.type)
