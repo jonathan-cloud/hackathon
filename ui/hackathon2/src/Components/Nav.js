@@ -9,7 +9,7 @@ const Nav = () => {
   return (
 
     <div className="row-fluid">
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="light" variant="success">
         <Navbar.Brand href="#home">GreenCiycle</Navbar.Brand>
         <span onClick={() => setSearchActive(!searchActive)} className="search-icon">
           <i class="fa fa-search"></i>
