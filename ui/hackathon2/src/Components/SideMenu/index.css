@@ -1,0 +1,53 @@
+.sidebar {
+  
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+}
+  
+
+
+.plastic-btn {
+  background-image: url("../Images/plastic-bottle.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50%;
+  background-color:yellow ;
+}
+
+.carton-btn {
+  background-image: url("../Images/carton.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50%;
+  background-color:turquoise ;
+}
+.solar-btn {
+  background-image: url("../Images/solar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50%;
+  background-color:salmon ;
+}
+.organic-btn {
+  background-image: url("../Images/apple.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50%;
+  background-color:orangered ;
+}
+.clothes-btn {
+  background-image: url("../Images/tshirt.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50%;
+  background-color:#E5E5E5 ;
+}
+

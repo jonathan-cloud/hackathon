@@ -1,19 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap'
+import './Nav.css'
 
 const Nav = () => {
-  
+  const [searchActive, setSearchActive] = useState(false)
+
+
   return (
-   
-      <div className="row-fluid">
-        <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="#home">WeAct</Navbar.Brand>
-          {/* <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form> */}
-        </Navbar>
-      </div>
+
+    <div className="row-fluid">
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home">GreenCiycle</Navbar.Brand>
+        <span onClick={() => setSearchActive(!searchActive)} className="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+
+        
+          <input className={`form-control search-input ${searchActive && "active"}`} />
+        
+
+      </Navbar>
+    </div>
 
   )
 }
