@@ -59,7 +59,7 @@ def insert(file, his_data):
         # locations table
         for record in street:
             lan, lon = np.random.uniform(low=32, high=35, size=2)
-            insert_query = """INSERT INTO locations (address, lon, lat) VALUES (%s, %s, %s)"""
+            insert_query = """INSERT IGNORE INTO locations (address, lon, lat) VALUES (%s, %s, %s)"""
             cur.execute(insert_query, (record, lan, lon))
 
         # types table
@@ -83,7 +83,3 @@ def insert(file, his_data):
             for lat, lon, c_type in reader:
                 insert_query = """INSERT INTO history (lon, lat, type_id) VALUES (%s, %s, %s)"""
                 cur.execute(insert_query, (lat, lon, c_type))
-
-
-create_db()
-insert('hackathon_data.xlsx', 'history.csv')
