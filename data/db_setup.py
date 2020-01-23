@@ -2,11 +2,10 @@ import json
 import csv
 import pandas as pd
 import numpy as np
-
 from geopy.geocoders import Nominatim
+
 from data.utils import db_connection
-from tqdm import tqdm
-from geopy.exc import GeocoderTimedOut
+
 
 CONF_PATH = '../db_config.json'
 
@@ -73,12 +72,12 @@ def insert(file, his_data):
                 lon = np.random.uniform(34.7740, 34.7988)
             else:
                 lat, lon = location.latitude, location.longitude
-            insert_query = """INSERT INTO locations (address, lat, lon) VALUES (%s, %s, %s)"""
+            insert_query = """INSERT IGNORE INTO locations (address, lat, lon) VALUES (%s, %s, %s)"""
             cur.execute(insert_query, (record, lat, lon))
 
         # types table
         for record in types:
-            insert_query = """INSERT INTO types (category) VALUES (%s)"""
+            insert_query = """INSERT IGNORE INTO types (category) VALUES (%s)"""
             cur.execute(insert_query, (record,))
 
         # types_to_locations table
@@ -97,3 +96,7 @@ def insert(file, his_data):
             for lat, lon, c_type in reader:
                 insert_query = """INSERT INTO history (lat, lon, type_id) VALUES (%s, %s, %s)"""
                 cur.execute(insert_query, (lat, lon, c_type))
+
+
+create_db()
+insert('hackathon_data.xlsx', 'history.csv')
