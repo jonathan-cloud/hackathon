@@ -63,3 +63,8 @@ span {
   padding: 10px;
   font-size: 2em;
 }
+
+.panda {
+  background-image: url("/panda1.png");
+  height: 100px;
+}

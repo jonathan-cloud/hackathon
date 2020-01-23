@@ -10,7 +10,7 @@
 
 
 .plastic-btn {
-  background-image: url("../Images/plastic-bottle.png");
+  background-image: url("/plastic-bottle.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
@@ -20,7 +20,7 @@
 }
 
 .carton-btn {
-  background-image: url("../Images/carton.png");
+  background-image: url("/carton.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
@@ -29,7 +29,7 @@
   margin-bottom: 10px;
 }
 .solar-btn {
-  background-image: url("../Images/solar.png");
+  background-image: url("/solar.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
@@ -38,7 +38,7 @@
   margin-bottom: 10px;
 }
 .organic-btn {
-  background-image: url("../Images/apple.png");
+  background-image: url("/apple.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
@@ -47,7 +47,7 @@
   margin-bottom: 10px;
 }
 .clothes-btn {
-  background-image: url("../Images/tshirt.png");
+  background-image: url("/tshirt.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
@@ -57,7 +57,7 @@
 }
 
 .bottles-btn {
-  background-image: url("../Images/wine.png");
+  background-image: url("/wine.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
