@@ -1,15 +1,11 @@
 import React, { useState,Context, useEffect } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import 'react-bootstrap'
-
-
-
-
-
+import * as predictData from '../Components/predict.json'
 
 const Maps = () => {
   
-  
+  console.log(predictData.default)
   const [selected, setSelected] = useState(null)
   const [latitude, setLatitude] = useState()
   const [longitude, setLongitutde] = useState()
@@ -77,7 +73,7 @@ const Maps = () => {
 
       </Marker>
       
-      {locations.map(res => (
+      {predictData.default.map(res => (
 
         <Marker
           icon={{
